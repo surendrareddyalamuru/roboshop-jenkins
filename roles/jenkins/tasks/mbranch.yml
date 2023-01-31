@@ -1,12 +1,12 @@
 - name: Build job file from template
   ansible.builtin.template:
     src: folder.xml
-    dest: /tmp/mbranch.yml
+    dest: /tmp/mbranch.xml
 
 
 - name: Create a multibranch job
   community.general.jenkins_job:
-    config: "{{ lookup('file', '/tmp/mbranch.yml') }}"
+    config: "{{ lookup('file', '/tmp/mbranch.xml') }}"
     name: "ci-pipelines/{{item.name}}"
     password: admin123
     url: http://172.31.7.189:8080
