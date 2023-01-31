@@ -1,6 +1,6 @@
 - name: Build job file from template
   ansible.builtin.template:
-    src: folder.xml
+    src: mbranch.xml
     dest: /tmp/mbranch.xml
 
 
