@@ -7,6 +7,7 @@
     user: admin
   loop:
     - { name: "ci-pipelines" }
+    - { name: "terraform" }
 
 
 - name: include multi branch task file
@@ -18,3 +19,9 @@
     - { name: "shipping" }
     - { name: "payment" }
     - { name: "user" }
+
+
+- name: include single branch task file
+  ansible.builtin.include_tasks: sbranch.yml
+  loop:
+    - { name: "infra-create", repo: "roboshop-mutable-infra" }
