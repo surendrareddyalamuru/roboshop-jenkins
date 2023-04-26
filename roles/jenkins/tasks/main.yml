@@ -6,19 +6,19 @@
     url: http://172.31.7.189:8080
     user: admin
   loop:
-    - { name: "ci-pipelines" }
+#    - { name: "ci-pipelines" }
     - { name: "terraform" }
 
 
-- name: include multi branch task file
-  ansible.builtin.include_tasks: mbranch.yml
-  loop:
-    - { name: "cart" }
-    - { name: "catalogue" }
-    - { name: "frontend" }
-    - { name: "shipping" }
-    - { name: "payment" }
-    - { name: "user" }
+#- name: include multi branch task file
+#  ansible.builtin.include_tasks: mbranch.yml
+#  loop:
+#    - { name: "cart" }
+#    - { name: "catalogue" }
+#    - { name: "frontend" }
+#    - { name: "shipping" }
+#    - { name: "payment" }
+#    - { name: "user" }
 
 
 - name: include single branch task file
